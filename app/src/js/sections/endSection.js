@@ -18,6 +18,18 @@ var text = new TextPanel(
 );
 endSection.add(text.el);
 
+var text2 = new TextPanel(
+  'BIGGER AND BETTER THAN EVER',
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+text2.el.position.y = -10;
+endSection.add(text2.el);
+
 var field = new LookAtField({
   count: 50
 });
@@ -25,6 +37,7 @@ endSection.add(field.el);
 
 endSection.onIn(function () {
   text.in();
+  text2.in();
   field.in();
 });
 

@@ -383,8 +383,7 @@ jQuery(function () {
   });
 
   SCENE.on('end', function () {
-    SCENE.lock();
-    APP.slide(SCENE.unlock);
+   
   });
 
   // map

@@ -48,11 +48,9 @@ var text = new TextPanel(
     lineSpacing: 40
   }
 );
-text.el.position.y = 0;
-text.el.position.x = -10;
 citySection.add(text.el);
 
-citySection.onIn(function (way) {
+citySection.onIn(function () {
   text.in();
 });
 
@@ -62,7 +60,7 @@ citySection.onOut(function (way) {
 });
 
 citySection.onStart(function (way) {
-
+    //text.in();
 });
 
 citySection.onStop(function (way) {

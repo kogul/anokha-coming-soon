@@ -9,6 +9,7 @@ var galaxySection = new Section('galaxy');
 
 var galaxy = new Galaxy();
 galaxy.el.rotation.x = -1;
+galaxy.el.position.set(0,0,-25);
 galaxySection.add(galaxy.el);
 
 galaxy.el.visible = false;
@@ -18,11 +19,11 @@ var text = new TextPanel(
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
-text.el.position.set(0, 20, -20);
+text.el.position.set(0, 0, 0);
 galaxySection.add(text.el);
 
 galaxySection.onIn(function (way) {

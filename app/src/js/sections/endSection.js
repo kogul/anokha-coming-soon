@@ -16,6 +16,7 @@ var text = new TextPanel(
     lineSpacing: 40
   }
 );
+text.el.position.z = 10;
 endSection.add(text.el);
 
 var text2 = new TextPanel(
@@ -28,11 +29,13 @@ var text2 = new TextPanel(
   }
 );
 text2.el.position.y = -10;
+text2.el.position.z = 10;
 endSection.add(text2.el);
 
 var field = new LookAtField({
   count: 50
 });
+
 endSection.add(field.el);
 
 endSection.onIn(function () {

@@ -27,11 +27,11 @@ var comm = new TextPanel(
   {
     align: 'right',
     style: '',
-    size: 40,
+    size: 30,
     lineSpacing: 40,
   }
 );
-comm.el.position.set(-30, 8, 0);
+comm.el.position.set(-25, 8, 0);
 heightSection.add(comm.el);
 
 var pr = new TextPanel(
@@ -39,11 +39,11 @@ var pr = new TextPanel(
   {
     align: 'right',
     style: '',
-    size: 40,
+    size: 30,
     lineSpacing: 40,
   }
 );
-pr.el.position.set(-30, -8, 0);
+pr.el.position.set(-25, -8, 0);
 heightSection.add(pr.el);
 
 heightMap.el.visible = false;

@@ -1,11 +1,23 @@
 'use strict';
 
 var Section = require('../classes/SectionClass');
-
+var TextPanel = require('../objects3D/TextPanelObject3D');
 var Title = require('../objects3D/HelloTitleObject3D');
 var Smoke = require('../objects3D/SmokeObject3D');
 
 var helloSection = new Section('hello');
+
+var text = new TextPanel(
+  " Made With Love From Anokha Web Team",
+  {
+    align: 'right',
+    style: '',
+    size: 40,
+    lineSpacing: 20
+  }
+);
+text.el.position.set(0,-15,0);
+helloSection.add(text.el);
 
 var title = new Title();
 helloSection.add(title.el);
@@ -23,10 +35,14 @@ var smoke = new Smoke({
 
 helloSection.add(smoke.el);
 
+
+
 smoke.el.visible = false;
 
 helloSection.onIn(function () {
-  title.in();
+ title.in();
+ text.in();
+
 });
 
 helloSection.onOut(function () {

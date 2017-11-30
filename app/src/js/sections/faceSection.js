@@ -17,7 +17,7 @@ var eve = new TextPanel(
     lineSpacing: 40
   }
 );
-eve.el.position.set(23, 0, 0);
+eve.el.position.set(25, 0, 0);
 eve.el.rotation.y = -0.4;
 faceSection.add(eve.el);
 
@@ -31,7 +31,7 @@ var lum = new TextPanel(
   }
 );
 lum.el.position.set(-23, 0, 0);
-lum.el.rotation.y = -0.4;
+lum.el.rotation.y = -0.2;
 faceSection.add(lum.el);
 
 var face = new Face();

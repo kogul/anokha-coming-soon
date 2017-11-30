@@ -1,7 +1,7 @@
 'use strict';
 
 var THREE = require('three');
-
+var TextPanel = require('../objects3D/TextPanelObject3D');
 var dilate = require('../utils/dilateUtil');
 
 var outlineMaterial = require('../materials/outlineMaterial');
@@ -95,7 +95,8 @@ City.prototype.processObj = function (data) {
 };
 
 City.prototype.showGroup = function (name) {
-  this.el.add(this.groups[name]);
+ 
+ this.el.add(this.groups[name]);
 };
 
 module.exports = City;

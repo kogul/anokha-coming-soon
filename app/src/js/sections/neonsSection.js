@@ -69,7 +69,7 @@ pnr.el.position.set(-18, 0, 0);
 pnr.el.rotation.y = 0.4;
 neonsSection.add(pnr.el);
 cr.el.position.set(18, 0, 0);
-cr.el.rotation.y = 0.4;
+cr.el.rotation.y = 0.2;
 neonsSection.add(cr.el);
 
 neonsSection.onStart(function () {

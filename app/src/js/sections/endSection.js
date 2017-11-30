@@ -20,7 +20,7 @@ text.el.position.z = 10;
 endSection.add(text.el);
 
 var text2 = new TextPanel(
-  'BIGGER AND BETTER THAN EVER',
+  'Bigger and Better than Ever',
   {
     align: 'center',
     style: '',

@@ -9,7 +9,7 @@ var Strips = require('../objects3D/StripsObject3D');
 var faceSection = new Section('face');
 
 var eve = new TextPanel(
-  'S E C U R I T Y',
+  'E V E N T I D E',
   {
     align: 'left',
     style: '',

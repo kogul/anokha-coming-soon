@@ -18,11 +18,11 @@ gravitySection.add(grid.el);
 grid.el.visible = false;
 
 var text1 = new TextPanel(
-  'F U N   S T A L L S',
+  "F U N   S T A L L S\nWe're all about the adrenaline",
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -31,11 +31,11 @@ text1.el.position.x = -23;
 gravitySection.add(text1.el);
 
 var text = new TextPanel(
-  'H O S P I T A L I T Y',
+  'H O S P I T A L I T Y\nBed, bath and beyond',
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -44,16 +44,16 @@ text.el.position.x = 23;
 gravitySection.add(text.el);
 
 var text2 = new TextPanel(
-  'P R I Z E   H A N D L I N G',
+  'P R I Z E   H A N D L I N G\nAppreciation is better shown than told',
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
-text2.el.position.y = -10;
-text2.el.position.x = 10;
+text2.el.position.y = -12;
+text2.el.position.x = 0;
 gravitySection.add(text2.el);
 
 gravitySection.onIn(function () {

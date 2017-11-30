@@ -15,7 +15,7 @@ galaxySection.add(galaxy.el);
 galaxy.el.visible = false;
 
 var text = new TextPanel(
-  'W E B,   M U L T I M E D I A   A N D   D O C U M E N T A T I O N',
+  'W E B,   M U L T I M E D I A   A N D   D O C U M E N T A T I O N\n\nUndefined',
   {
     align: 'center',
     style: '',

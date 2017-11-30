@@ -1,75 +1,44 @@
 'use strict';
 
-var TweenLite = require('tweenlite');
+var Section = require('../classes/SectionClass');
 
 var TextPanel = require('../objects3D/TextPanelObject3D');
 
-var Section = require('../classes/SectionClass');
-
-var City = require('../objects3D/CityObject3D');
-
 var citySection = new Section('city');
 
-var text = new TextPanel(
-  'E V E N T I D E',
+var cse = new TextPanel(
+  'C S E\n E C E\n E E E\n M E C H\n C H E M\n A E R O\n C I V I L',
   {
-    align: 'center',
+    align: 'left',
     style: '',
-    size: 50,
+    size: 35,
     lineSpacing: 40
   }
 );
-text.el.position.set(0,0,0);
-citySection.add(text.el);
+cse.el.position.set(20,-20,0);
+citySection.add(cse.el);
 
-var city = new City();
-city.addGroup({
-  name: 'shanghai',
-  objs: {
-    ground: './app/public/3D/shanghai-grounds.js',
-    buildings: './app/public/3D/shanghai-buildings.js',
-    towers: './app/public/3D/shanghai-towers.js'
-  },
-  outline: {
-    ground: {
-      offset: 0.2,
-      solid: true
-    }
+var cs = new TextPanel(
+  'A S C O M\n C E N\n C Y B E R    S E C U R I T Y\n M S W\n M A T H S\n S C I E N C E\n E N G L I S H',
+  {
+    align: 'left',
+    style: '',
+    size: 35,
+    lineSpacing: 40
   }
-});
-
-// city.el.rotation.y = Math.PI / 6;
-city.el.rotation.y = 0;
-city.el.visible=false;
-city.el.rotation.z = Math.PI / 16;
-city.el.position.set(5, -10, 0);
-citySection.add(city.el);
-
-TweenLite.to(city.el.rotation, 30, { y: 2 * Math.PI, ease: window.Linear.easeNone,
-  onComplete: function () {
-    this.restart();
-  }
-});
+);
+cs.el.position.set(20,20,0);
+citySection.add(cs.el);
 
 citySection.onIn(function () {
-  city.in();
-  text.in();
+  cse.in();
+  cs.in();
 });
 
 citySection.onOut(function (way) {
-  city.out(way);
-  text.out(way);
+  cse.out(way);
+  cs.out(way);
 
-});
-
-citySection.onStart(function (way) {
-    city.showGroup('shanghai');
-    city.start();
-});
-
-citySection.onStop(function (way) {
-  city.el.visible=false;
-  city.stop();
 });
 
 module.exports = citySection;

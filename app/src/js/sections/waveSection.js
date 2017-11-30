@@ -11,11 +11,11 @@ var wave = new Wave();
 waveSection.add(wave.el);
 
 var text = new TextPanel(
-  'F I N A N C E',
+  'F I N A N C E\n\nReserve Bank of Anokha',
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -24,11 +24,11 @@ text.el.position.x = -20;
 waveSection.add(text.el);
 
 var text1 = new TextPanel(
-  'F O O D   S T A L L S',
+  "F O O D   S T A L L S\n\nWhat's a party without cake",
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );

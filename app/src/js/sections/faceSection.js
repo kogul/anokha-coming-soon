@@ -9,11 +9,11 @@ var Strips = require('../objects3D/StripsObject3D');
 var faceSection = new Section('face');
 
 var eve = new TextPanel(
-  'E V E N T I D E',
+  'E V E N T I D E\n\nExtravaganza has an address',
   {
-    align: 'left',
+    align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -22,11 +22,11 @@ eve.el.rotation.y = -0.4;
 faceSection.add(eve.el);
 
 var lum = new TextPanel(
-  'L U M I E R E',
+  'L U M I E R E\n\nWhere great minds think aloud',
   {
-    align: 'left',
+    align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );

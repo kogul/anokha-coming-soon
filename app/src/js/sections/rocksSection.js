@@ -11,11 +11,11 @@ var rocks = new Rocks();
 rocksSection.add(rocks.el);
 
 var reg = new TextPanel(
-  'R E G I S T R A T I O N',
+  'R E G I S T R A T I O N\nAdmit One',
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -24,11 +24,11 @@ rocksSection.add(reg.el);
 reg.out('down');
 
 var tran = new TextPanel(
-  'T R A S P O R T A T I O N',
+  "T R A S P O R T A T I O N\nYou'll never walk alone",
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );
@@ -37,11 +37,11 @@ rocksSection.add(tran.el);
 tran.out('down');
 
 var sec = new TextPanel(
-  'S E C U R I T Y',
+  'S E C U R I T Y\nOur watch has just begun',
   {
     align: 'center',
     style: '',
-    size: 50,
+    size: 40,
     lineSpacing: 40
   }
 );

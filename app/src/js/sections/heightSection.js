@@ -23,9 +23,9 @@ heightMap.el.rotation.y = -0.6;
 heightSection.add(heightMap.el);
 
 var comm = new TextPanel(
-  ' C O M M U N I C A T I O N',
+  ' C O M M U N I C A T I O N\nWhere the wordsmiths reside',
   {
-    align: 'right',
+    align: 'center',
     style: '',
     size: 30,
     lineSpacing: 40,
@@ -35,9 +35,9 @@ comm.el.position.set(-25, 8, 0);
 heightSection.add(comm.el);
 
 var pr = new TextPanel(
-  ' P U B L I C   R E L A T I O N S',
+  ' P U B L I C   R E L A T I O N S\nExpanding the network',
   {
-    align: 'right',
+    align: 'center',
     style: '',
     size: 30,
     lineSpacing: 40,

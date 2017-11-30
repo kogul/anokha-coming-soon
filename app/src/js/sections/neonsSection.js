@@ -46,7 +46,7 @@ neonD.el.visible = false;
 smoke.el.visible = false;
 
 var pnr = new TextPanel(
-  " P L A N N I N G \n A N D \n R E S O U R C E S ",
+  " P L A N N I N G \n A N D \n R E S O U R C E S\n\nIdeate . Plan . Execute",
   {
     align: 'center',
     style: '',
@@ -56,7 +56,7 @@ var pnr = new TextPanel(
 );
 
 var cr = new TextPanel(
-  " C O R P O R A T E \n R E L A T I O N S ",
+  " C O R P O R A T E \n R E L A T I O N S\n\nA great negotiation can work miracles",
   {
     align: 'center',
     style: '',

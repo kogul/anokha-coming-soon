@@ -16,13 +16,13 @@ var random = require('../utils/randomUtil');
  * @requires jQuery, THREE, TweenLite, random
  */
 function LookAtField (options) {
-  var parameters = jQuery.extend({
+ /* var parameters = jQuery.extend({
     count: 100
   }, options);
 
   var center = new THREE.Vector3(0, 50, 0);
 
-  var triangleGeometry = new THREE.TetrahedronGeometry(3);
+  var triangleGeometry = new THREE.TetrahedronGeometry(4);
 
   var triangleMaterial = new THREE.MeshLambertMaterial({ shading: THREE.FlatShading });
   var triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
@@ -53,7 +53,35 @@ function LookAtField (options) {
       group.children[i].lookAt(center);
     }
   }
+*/
+  var img = [
+    new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+    }),
+     new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+    }),
+      new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+    }),
+       new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+      
+    }),
+        new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+    }),
+         new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+       
+    }),
 
+  ];
+    img.map.needsUpdate = true; //ADDED
+
+    // plane
+    var plane = new THREE.Mesh(new THREE.BoxGeometry(30,30,30),new THREE.MeshFaceMaterial(img));
+
+    plane.overdraw = true;
+    var group = new THREE.Object3D(); 
+     group.add(plane);
   this.el = group;
 
   this.in = function () {

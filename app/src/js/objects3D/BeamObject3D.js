@@ -66,7 +66,7 @@ function Beam (options) {
   bodyGeometry.vertices[2].y = bodyGeometry.vertices[3].y = (height / 2) + (width / 2);
   bodyGeometry.verticesNeedUpdate = true;
   bodyGeometry.computeBoundingSphere();
-
+  
   var bodyMesh = new THREE.Mesh(bodyGeometry, bodyMaterial);
   var capMeshTop = new THREE.Mesh(capGeometry, capMaterial);
   var capMeshBottom = capMeshTop.clone();

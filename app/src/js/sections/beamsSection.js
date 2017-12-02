@@ -2,7 +2,7 @@
 
 var Section = require('../classes/SectionClass');
 var TextPanel = require('../objects3D/TextPanelObject3D');
-
+var Clock = require('../objects3D/ClockObject3d.js');
 var Beam = require('../objects3D/BeamObject3D');
 
 var beamsSection = new Section('beams');
@@ -14,6 +14,11 @@ beamsSection.add(leftBeam.el);
 var middleBeam = new Beam({ color: '#ffffff', width: 4, cubeSize: 1, delay: 0.1 });
 middleBeam.el.position.y = 15;
 beamsSection.add(middleBeam.el);
+
+
+var clock = new Clock();
+clock.el.position.set(0,0,0);
+beamsSection.add(clock.el);
 
 var rightBeam = new Beam({ color: '#4c4c4c', delay: 0.4 });
 rightBeam.el.position.set(-20, 30, -20);
@@ -40,6 +45,7 @@ beamsSection.onIn(function () {
   middleBeam.in();
   rightBeam.in();
   text.in();
+  clock.in();
 });
 
 beamsSection.onOut(function (way) {

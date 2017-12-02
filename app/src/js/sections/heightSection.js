@@ -13,9 +13,9 @@ var heightMap = new HeightMap({
   plane: false,
   points: false,
   maps: [
-    { name: 'A', url: './app/public/img/heightMap-A.jpg' },
-    { name: 'B', url: './app/public/img/heightMap-B.jpg' },
-    { name: 'O', url: './app/public/img/heightMap-O.jpg' }
+    { name: 'A', url: './app/public/img/test.jpg' },
+    /*{ name: 'B', url: './app/public/img/heightMap-B.jpg' },*/
+    /*{ name: 'O', url: './app/public/img/heightMap-O.jpg' }*/
   ]
 });
 heightMap.el.position.z = -10;
@@ -23,19 +23,19 @@ heightMap.el.rotation.y = -0.6;
 heightSection.add(heightMap.el);
 
 var comm = new TextPanel(
-  ' C O M M U N I C A T I O N\nWhere the wordsmiths reside',
+  ' C O M M U N I C A T I O N',
   {
     align: 'center',
     style: '',
-    size: 30,
+    size: 80,
     lineSpacing: 40,
   }
 );
-comm.el.position.set(-25, 8, 0);
+comm.el.position.set(-25, 0, 0);
 heightSection.add(comm.el);
 
-var pr = new TextPanel(
-  ' P U B L I C   R E L A T I O N S\nExpanding the network',
+var commtag = new TextPanel(
+  ' Where the wordsmiths reside',
   {
     align: 'center',
     style: '',
@@ -43,7 +43,32 @@ var pr = new TextPanel(
     lineSpacing: 40,
   }
 );
-pr.el.position.set(-25, -8, 0);
+comm.el.position.set(-25,-8, 0);
+heightSection.add(comm.el);
+
+
+var pr = new TextPanel(
+  ' P U B L I C   R E L A T I O N S',
+  {
+    align: 'center',
+    style: '',
+    size: 80,
+    lineSpacing: 40,
+  }
+);
+pr.el.position.set(25, 0, 0);
+heightSection.add(pr.el);
+
+var pr = new TextPanel(
+  'Expanding the network',
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40,
+  }
+);
+pr.el.position.set(25, -8, 0);
 heightSection.add(pr.el);
 
 heightMap.el.visible = false;

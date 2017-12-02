@@ -24,15 +24,15 @@ middleBeam.el.visible = false;
 rightBeam.el.visible = false;
 
 var text = new TextPanel(
-  " I T ' S \n T I M E ",
+  " I T ' S   T I M E ",
   {
-    align: 'right',
+    align: 'center',
     style: '',
-    size: 60,
+    size: 120,
     lineSpacing: 40
   }
 );
-text.el.position.set(10, 7, 0);
+text.el.position.set(0, 0, 0);
 beamsSection.add(text.el);
 
 beamsSection.onIn(function () {

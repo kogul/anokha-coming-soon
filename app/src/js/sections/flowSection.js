@@ -22,16 +22,15 @@ var field = new FlowField(points, {
 flowSection.add(field.el);
 
 var text = new TextPanel(
-  ' T H E \n L I N E - U P ',
+  ' T H E    T E A M S ',
   {
     align: 'center',
     style: '',
-    size: 55,
+    size: 120,
     lineSpacing: 40
   }
 );
-text.el.position.z = -10;
-text.el.rotation.y = 0.4;
+text.el.position.set(0, 0, 0);
 flowSection.add(text.el);
 
 field.el.visible = false;

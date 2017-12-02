@@ -13,15 +13,15 @@ drop.el.position.y = -10;
 dropSection.add(drop.el);
 
 var text = new TextPanel(
-  " T O \n S E T ",
+  " T O   S E T ",
   {
-    align: 'right',
+    align: 'center',
     style: '',
-    size: 60,
+    size: 120,
     lineSpacing: 40
   }
 );
-text.el.position.set(-10, 8, 0);
+text.el.position.set(0, 0, 0);
 dropSection.add(text.el);
 
 drop.el.visible = false;

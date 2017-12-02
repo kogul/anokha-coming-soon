@@ -22,18 +22,44 @@ grid.el.rotation.set(1.5, 1, 2);
 grid.el.position.x = -20;
 ballSection.add(grid.el);
 
-var text = new TextPanel(
-  'T H E   B A L L \n R O L L I N G ',
+var text1 = new TextPanel(
+  'T H E  ',
   {
-    align: 'left',
+    align: 'center',
     style: '',
-    size: 40,
+    size: 120,
     lineSpacing: 40
   }
 );
-text.el.position.set(15, 0, 15);
-text.el.rotation.y = -0.4;
-ballSection.add(text.el);
+text1.el.position.set(-25, 0, 0);
+text1.el.rotation.y = 1;
+ballSection.add(text1.el);
+
+var text2 = new TextPanel(
+  'S T A G E ',
+  {
+    align: 'center',
+    style: '',
+    size: 100,
+    lineSpacing: 40
+  }
+);
+text2.el.position.set(25, 0, 0);
+text2.el.rotation.y = -1 ;
+ballSection.add(text2.el);
+
+var text3 = new TextPanel(
+  'O N   F I R E ',
+  {
+    align: 'center',
+    style: '',
+    size: 100,
+    lineSpacing: 20
+  }
+);
+text3.el.position.set(0, -20, 0);
+text3.el.rotation.y = 0;
+ballSection.add(text3.el);
 
 ball.el.visible = false;
 grid.el.visible = false;
@@ -41,11 +67,15 @@ grid.el.visible = false;
 ballSection.onIn(function () {
   ball.in();
   grid.in();
-  text.in();
+  text1.in();
+  text2.in();
+  text3.in();
 });
 
 ballSection.onOut(function (way) {
-  text.out(way);
+  text1.out(way);
+  text2.out(way);
+  text3.out(way);
   grid.out(way);
 
   if (way === 'up') {

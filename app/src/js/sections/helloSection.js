@@ -8,15 +8,15 @@ var Smoke = require('../objects3D/SmokeObject3D');
 var helloSection = new Section('hello');
 
 var text = new TextPanel(
-  " Made With Love From Anokha Web Team",
+  " Crafted with love by Web Team",
   {
     align: 'right',
     style: '',
-    size: 40,
+    size: 25,
     lineSpacing: 20
   }
 );
-text.el.position.set(0,-15,0);
+text.el.position.set(0,-18,0);
 helloSection.add(text.el);
 
 var title = new Title();

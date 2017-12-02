@@ -22,13 +22,39 @@ var text = new TextPanel(
 text.el.position.y = 10;
 text.el.position.x = -20;
 waveSection.add(text.el);
-
-var text1 = new TextPanel(
-  "F O O D   S T A L L S\n\nWhat's a party without cake",
+var text = new TextPanel(
+  'F I N A N C E',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 80,
+    lineSpacing: 40
+  }
+);
+text.el.position.y = 10;
+text.el.position.x = -20;
+waveSection.add(text.el);
+
+var texttag = new TextPanel(
+  'Reserve Bank of Anokha',
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+texttag.el.position.y = 5;
+texttag.el.position.x = -20;
+waveSection.add(texttag.el);
+
+
+var text1 = new TextPanel(
+  "F O O D   S T A L L S",
+  {
+    align: 'center',
+    style: '',
+    size: 80,
     lineSpacing: 40
   }
 );
@@ -36,11 +62,28 @@ text1.el.position.y = 10;
 text1.el.position.x = 20;
 waveSection.add(text1.el);
 
+
+var text1tag = new TextPanel(
+  "What's a party without cake",
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+text1tag.el.position.y = 5;
+text1tag.el.position.x = 20;
+waveSection.add(text1tag.el);
+
+
 wave.el.visible = false;
 
 waveSection.onIn(function (way) {
   text.in();
+  texttag.in();
   text1.in();
+  text1tag.in();
   wave.in(way);
 });
 

@@ -15,20 +15,32 @@ galaxySection.add(galaxy.el);
 galaxy.el.visible = false;
 
 var text = new TextPanel(
-  'W E B,   M U L T I M E D I A   A N D   D O C U M E N T A T I O N\n\nUndefined',
+  'W E B   M U L T I M E D I A   A N D   D O C U M E N T A T I O N',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 60,
     lineSpacing: 40
   }
 );
 text.el.position.set(0, 0, 0);
 galaxySection.add(text.el);
 
+var texttag = new TextPanel(
+  'Tagline',
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+texttag.el.position.set(0, -5, 0);
+galaxySection.add(texttag.el);
 galaxySection.onIn(function (way) {
   galaxy.in(way);
   text.in();
+  texttag.in();
 });
 
 galaxySection.onOut(function (way) {

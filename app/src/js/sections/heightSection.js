@@ -27,7 +27,7 @@ var comm = new TextPanel(
   {
     align: 'center',
     style: '',
-    size: 80,
+    size: 60,
     lineSpacing: 40,
   }
 );
@@ -43,23 +43,23 @@ var commtag = new TextPanel(
     lineSpacing: 40,
   }
 );
-comm.el.position.set(-25,-8, 0);
-heightSection.add(comm.el);
+commtag.el.position.set(-25,-8, 0);
+heightSection.add(commtag.el);
 
 
 var pr = new TextPanel(
-  ' P U B L I C   R E L A T I O N S',
+  ' P U B L I C \n   R E L A T I O N S',
   {
     align: 'center',
     style: '',
-    size: 80,
+    size: 60,
     lineSpacing: 40,
   }
 );
 pr.el.position.set(25, 0, 0);
 heightSection.add(pr.el);
 
-var pr = new TextPanel(
+var prtag = new TextPanel(
   'Expanding the network',
   {
     align: 'center',
@@ -68,18 +68,20 @@ var pr = new TextPanel(
     lineSpacing: 40,
   }
 );
-pr.el.position.set(25, -8, 0);
-heightSection.add(pr.el);
+prtag.el.position.set(25, -8, 0);
+heightSection.add(prtag.el);
 
 heightMap.el.visible = false;
 
 heightSection.onIn(function () {
   comm.in();
+  commtag.in();
   pr.in();
+  prtag.in();
 });
 
 heightSection.onOut(function (way) {
-  text.out(way);
+  
   pr.out(way);
 });
 

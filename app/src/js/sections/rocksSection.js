@@ -11,11 +11,11 @@ var rocks = new Rocks();
 rocksSection.add(rocks.el);
 
 var reg = new TextPanel(
-  'R E G I S T R A T I O N\nAdmit One',
+  'R E G I S T R A T I O N',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 60,
     lineSpacing: 40
   }
 );
@@ -23,12 +23,26 @@ reg.el.position.set(23, 0, 0);
 rocksSection.add(reg.el);
 reg.out('down');
 
-var tran = new TextPanel(
-  "T R A S P O R T A T I O N\nYou'll never walk alone",
+var regtag = new TextPanel(
+  'Admit One',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 30,
+    lineSpacing: 40
+  }
+);
+regtag.el.position.set(23, -5, 0);
+rocksSection.add(regtag.el);
+regtag.out('down');
+
+
+var tran = new TextPanel(
+  "T R A S P O R T A T I O N",
+  {
+    align: 'center',
+    style: '',
+    size: 60,
     lineSpacing: 40
   }
 );
@@ -36,12 +50,25 @@ tran.el.position.set(-23, 0, 0);
 rocksSection.add(tran.el);
 tran.out('down');
 
-var sec = new TextPanel(
-  'S E C U R I T Y\nOur watch has just begun',
+var trantag = new TextPanel(
+  "You'll never walk alone",
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 30,
+    lineSpacing: 40
+  }
+);
+trantag.el.position.set(-23, -5, 0);
+rocksSection.add(trantag.el);
+trantag.out('down');
+
+var sec = new TextPanel(
+  'S E C U R I T Y',
+  {
+    align: 'center',
+    style: '',
+    size: 60,
     lineSpacing: 40
   }
 );
@@ -49,13 +76,29 @@ sec.el.position.set(0, -8, 0);
 rocksSection.add(sec.el);
 sec.out('down');
 
+var sectag = new TextPanel(
+  'Our watch has just begun',
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+sectag.el.position.set(0, -13, 0);
+rocksSection.add(sectag.el);
+sectag.out('down');
+
 rocks.el.visible = false;
 
 rocksSection.onIn(function () {
   reg.in();
+  regtag.in();
   rocks.in();
   tran.in();
+  trantag.in();
   sec.in();
+  sectag.in()
 });
 
 rocksSection.onOut(function (way) {

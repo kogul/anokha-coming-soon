@@ -122,10 +122,10 @@ neonsSection.onStop(function () {
   neonC.stop();
   neonD.stop();
 
-  pnr.out(way);
-  cr.out(way);
-  pnrtag.out(way);
-  crtag.out(way);
+  pnr.out();
+  cr.out();
+  pnrtag.out();
+  crtag.out();
 
   neonA.el.visible = false;
   neonB.el.visible = false;

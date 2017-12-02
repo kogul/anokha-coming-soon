@@ -58,7 +58,7 @@ text.el.position.x = 23;
 gravitySection.add(text.el);
 
 var texttag = new TextPanel(
-  'Bed, bath and beyond',
+  'Arrive and revive ',
   {
     align: 'center',
     style: '',
@@ -84,7 +84,7 @@ text2.el.position.x = 0;
 gravitySection.add(text2.el);
 
 var text2tag = new TextPanel(
-  'Appreciation is better shown than told',
+  'Outdoing expectations ',
   {
     align: 'center',
     style: '',

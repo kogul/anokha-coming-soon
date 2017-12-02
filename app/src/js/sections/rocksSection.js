@@ -19,12 +19,12 @@ var reg = new TextPanel(
     lineSpacing: 40
   }
 );
-reg.el.position.set(23, 0, 0);
+reg.el.position.set(23, 2, 5);
 rocksSection.add(reg.el);
 reg.out('down');
 
 var regtag = new TextPanel(
-  'Admit One',
+  'Immigration counter to your technical utopia',
   {
     align: 'center',
     style: '',
@@ -32,7 +32,7 @@ var regtag = new TextPanel(
     lineSpacing: 40
   }
 );
-regtag.el.position.set(23, -5, 0);
+regtag.el.position.set(23, -3, 5);
 rocksSection.add(regtag.el);
 regtag.out('down');
 
@@ -46,12 +46,12 @@ var tran = new TextPanel(
     lineSpacing: 40
   }
 );
-tran.el.position.set(-23, 0, 0);
+tran.el.position.set(-23, 2, 5);
 rocksSection.add(tran.el);
 tran.out('down');
 
 var trantag = new TextPanel(
-  "You'll never walk alone",
+  "Safe and Secure. We'll guide you to the right place",
   {
     align: 'center',
     style: '',
@@ -59,7 +59,7 @@ var trantag = new TextPanel(
     lineSpacing: 40
   }
 );
-trantag.el.position.set(-23, -5, 0);
+trantag.el.position.set(-23, -3, 5);
 rocksSection.add(trantag.el);
 trantag.out('down');
 
@@ -72,12 +72,12 @@ var sec = new TextPanel(
     lineSpacing: 40
   }
 );
-sec.el.position.set(0, -8, 0);
+sec.el.position.set(0, -8, 5);
 rocksSection.add(sec.el);
 sec.out('down');
 
 var sectag = new TextPanel(
-  'Our watch has just begun',
+  'Your safety is our highest concern',
   {
     align: 'center',
     style: '',
@@ -85,7 +85,7 @@ var sectag = new TextPanel(
     lineSpacing: 40
   }
 );
-sectag.el.position.set(0, -13, 0);
+sectag.el.position.set(0, -13, 5);
 rocksSection.add(sectag.el);
 sectag.out('down');
 

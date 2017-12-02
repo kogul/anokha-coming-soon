@@ -27,13 +27,14 @@ beamsSection.add(rightBeam.el);
 leftBeam.el.visible = false;
 middleBeam.el.visible = false;
 rightBeam.el.visible = false;
+clock.el.visible = false;
 
 var text = new TextPanel(
   " I T ' S   T I M E ",
   {
     align: 'center',
     style: '',
-    size: 120,
+    size: 110,
     lineSpacing: 40
   }
 );
@@ -53,6 +54,7 @@ beamsSection.onOut(function (way) {
   middleBeam.out(way);
   rightBeam.out(way);
   text.out(way);
+  clock.out(way);
 });
 
 beamsSection.onStart(function () {
@@ -63,16 +65,19 @@ beamsSection.onStart(function () {
   leftBeam.el.visible = true;
   middleBeam.el.visible = true;
   rightBeam.el.visible = true;
+  clock.el.visible = true;
 });
 
 beamsSection.onStop(function () {
   leftBeam.stop();
   middleBeam.stop();
   rightBeam.stop();
+  
 
   leftBeam.el.visible = false;
   middleBeam.el.visible = false;
   rightBeam.el.visible = false;
+  clock.el.visible = false;
 });
 
 module.exports = beamsSection;

@@ -24,7 +24,7 @@ function Clock () {
   //var parameters = jQuery.extend(Beam.defaultOptions, options);
 var   segments = 64;
  var group = new THREE.Object3D();
-var radius   = 20,
+var radius   = 25,
   
     material = new THREE.LineBasicMaterial( { color: 0xffffff } ),
     geometry = new THREE.CircleGeometry( radius, segments );

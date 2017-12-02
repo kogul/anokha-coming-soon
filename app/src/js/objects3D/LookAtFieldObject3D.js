@@ -56,18 +56,18 @@ function LookAtField (options) {
 */
   var img = [
     new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
     }),
      new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
     }),
       new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
     }),
        new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
       
     }),
         new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/app/public/img/logo.png')
+        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
     }),
          new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
        
@@ -86,13 +86,13 @@ function LookAtField (options) {
 
   this.in = function () {
     group.visible = true;
-    TweenLite.to(center, 2, { y: 0, onUpdate: update });
-    TweenLite.to(group.position, 1, { y: 0 });
+   /* TweenLite.to(center, 2, { y: 0, onUpdate: update });
+    TweenLite.to(group.position, 1, { y: 0 });*/
   };
 
   this.out = function () {
-    TweenLite.to(center, 1, { y: 50, onUpdate: update, onComplete: function () { group.visible = false; } });
-    TweenLite.to(group.position, 1, { y: -50 });
+   /* TweenLite.to(center, 1, { y: 50, onUpdate: update, onComplete: function () { group.visible = false; } });
+    TweenLite.to(group.position, 1, { y: -50 });*/
   };
 }
 

@@ -10,7 +10,7 @@ var waveSection = new Section('wave');
 var wave = new Wave();
 waveSection.add(wave.el);
 
-var text = new TextPanel(
+/*var text = new TextPanel(
   'F I N A N C E\n\nReserve Bank of Anokha',
   {
     align: 'center',
@@ -21,7 +21,7 @@ var text = new TextPanel(
 );
 text.el.position.y = 10;
 text.el.position.x = -20;
-waveSection.add(text.el);
+waveSection.add(text.el);*/
 var text = new TextPanel(
   'F I N A N C E',
   {

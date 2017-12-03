@@ -59,8 +59,8 @@ function LookAtField (options) {
     new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/back.png')}),
     new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/web.png')}),
     new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/date.png')}),
-    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/bigger.png')}),
-    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/bbb.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/dare.png')}),
     ];
     
     img.map.needsUpdate = true; //ADDED

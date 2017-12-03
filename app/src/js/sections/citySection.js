@@ -6,18 +6,22 @@ var TextPanel = require('../objects3D/TextPanelObject3D');
 var Smoke = require('../objects3D/SmokeObject3D');
 var citySection = new Section('city');
 
-var smoke = new Smoke({
-  planesNumber: 3,
+var smoke = new Smoke({  
   frontColor: '#4c4c4c',
   backColor: '#ffffff',
+  layers: 3,
   data: [
-    { positionX : 0, positionY: 0, positionZ: 0, rotationZ: 2.7, scale: 8.5 },
-    { positionX : 0, positionY: 0, positionZ: 0, rotationZ: 1.4, scale: 5.8 },
-    { positionX : 0, positionY: 0, positionZ: 0, rotationZ: 1.6, scale: 7.4 }
+    { positionX : 10.7, positionY: 3.9, positionZ: 17.8, rotationZ: 2.7, scale: 3.9 },
+    { positionX : -2.8, positionY: 2.6, positionZ: -11, rotationZ: 0.7, scale: 7.7 },
+    { positionX : 13, positionY: 19.5, positionZ: -1.3, rotationZ: 2, scale: 2.7 }
   ]
 });
 citySection.add(smoke.el);
-smoke.el.visible = false;
+smokePlaying = true;
+
+  smoke.start();
+
+  smoke.el.visible = true;
 
 var techTitle =  new TextPanel(
   'TECHNICAL DEPARTMENTS',
@@ -76,7 +80,7 @@ citySection.onStop(function (way) {
 
 var smokePlaying = false;
 
-citySection.smokeStart = function () {
+var smokeStart = function () {
   if (smokePlaying) {
     return false;
   }

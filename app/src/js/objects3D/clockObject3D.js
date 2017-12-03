@@ -1,88 +1,126 @@
 'use strict';
-  
+
 var jQuery = require('jquery');
 var THREE = require('three');
 var TweenLite = require('tweenlite');
 
 var random = require('../utils/randomUtil');
+var yoyo = require('../utils/yoyoUtil');
 
 /**
- * Cloud of meshes looking at the same coordinates
+ * Light beam
  *
- * @class LookAtField
+ * @class Beam
  * @constructor
  * @param {Object} [options]
- * @param {Number} [options.count=100] Meshes number
- * @requires jQuery, THREE, TweenLite, random
+ * @param {String} [options.color='#ffffff'] Beam color
+ * @param {Number} [options.height=15] Beam expanded height
+ * @param {Number} [options.width=2] Beam width
+ * @param {Number} [options.cubeSize=0.5] Extremity cube size
+ * @param {Number} [options.delay=0] Animations delay
+ * @requires jQuery, THREE, TweenLite, random, yoyo
  */
-function LookAtField (options) {
- /* var parameters = jQuery.extend({
-    count: 100
-  }, options);
+function Clock () {
+  //var parameters = jQuery.extend(Beam.defaultOptions, options);
+var   segments = 64;
+ var group = new THREE.Object3D();
+var radius   = 25,
+  
+    material = new THREE.LineBasicMaterial( { color: 0xffffff } ),
+    geometry = new THREE.CircleGeometry( radius, segments );
 
-  var center = new THREE.Vector3(0, 50, 0);
+// Remove center vertex
+geometry.vertices.shift();
 
-  var triangleGeometry = new THREE.TetrahedronGeometry(4);
+var circle = new THREE.Line( geometry, material );
+var i = 0, radius = [],material=[],geometry=[],circle=[];
+for(i=0; i<10; i++ ){
+    radius[i] = (20 - (i/10));
+    material[i] = new THREE.LineBasicMaterial( { color: 0xdbdbdb } );
+    geometry[i] = new THREE.CircleGeometry( radius[i], segments );
+    geometry[i].vertices.shift();
+    circle[i] = new THREE.Line( geometry[i], material[i] );
+    group.add(circle[i]);
 
-  var triangleMaterial = new THREE.MeshLambertMaterial({ shading: THREE.FlatShading });
-  var triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
+}
 
-  var group = new THREE.Object3D();
+var geometrySphere = new THREE.SphereGeometry( 1 );
+var materialSphere = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+var sphere = new THREE.Mesh( geometrySphere, materialSphere );
+group.add( sphere );
 
-  for (var i = 0; i < parameters.count; i++) {
-    var triangleCopy = triangleMesh.clone();
-    triangleCopy.position.x = random(-50, 50);
-    triangleCopy.position.y = random(-50, 50);
-    triangleCopy.position.z = random(-50, 30);
 
-    triangleCopy.rotation.x = random(0, 2 * Math.PI);
-    triangleCopy.rotation.y = random(0, 2 * Math.PI);
-    triangleCopy.rotation.z = random(0, 2 * Math.PI);
+var Linematerial = new THREE.LineBasicMaterial({
+  color: 0x0000ff,
+  linewidth: 10
+});
+var line =[],hour=[];
+for(var i = 0;i<10;i++){
+var geometryLine = new THREE.Geometry();
+geometryLine.vertices.push(
+  new THREE.Vector3( Math.abs(0.5-(i/10)), 0, 0 ),
+  new THREE.Vector3(Math.abs(0.5-(i/10)), 18, 0 )
+);
 
-    triangleCopy.scale.x = triangleCopy.scale.y = triangleCopy.scale.z = random(0.6, 1);
+ line[i] = new THREE.Line( geometryLine, Linematerial );
+ 
+  group.add(line[i]);
+}
+for(var i = 0;i<10;i++){
+var geometryLine = new THREE.Geometry();
+geometryLine.vertices.push(
+  new THREE.Vector3( Math.abs(0.5-(i/10)), 0, 0 ),
+  new THREE.Vector3(Math.abs(0.5-(i/10)), 9, 0 )
+);
 
-    triangleCopy.lookAt(center);
+ hour[i] = new THREE.Line( geometryLine, Linematerial );
+  group.add(hour[i]);
+}
 
-    group.add(triangleCopy);
-  }
 
-  group.position.y = -50;
 
-  function update () {
-    for (var i = 0; i < parameters.count; i++) {
-      group.children[i].lookAt(center);
-    }
-  }
-*/
-  var img = [
-    new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('../../../public/img/logo.png')
-    }),
-     new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('../../../public/img/logo.png')
-    }),
-      ];
-    img.map.needsUpdate = true; //ADDED
 
-    // plane
-    var plane = new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshFaceMaterial(img));
-
-    plane.overdraw = true;
-    var group = new THREE.Object3D(); 
-     group.add(plane);
+  
   this.el = group;
 
+ // var delay = parameters.delay;
+
   this.in = function () {
-    group.visible = true;
-    /*TweenLite.to(center, 2, { y: 0, onUpdate: update });
-    TweenLite.to(group.position, 1, { y: 0 });*/
+    /*TweenLite.to(cache, 1, { y: -5, delay: delay, onUpdate: positionUpdate });*/
+   //  TweenLite.to(group.position, 1, { y: 0 });
+   for(var i =0; i<line.length; i++){
+  TweenLite.to(line[i].rotation, 30, { z: -16*Math.PI, ease: window.Linear.easeNone,
+  onComplete: function () {
+    this.restart();
+  }
+});
+}
+for(var i = 0; i<hour.length; i++){
+  TweenLite.to(hour[i].rotation, 30, { z: -4*Math.PI, ease: window.Linear.easeNone,
+  onComplete: function () {
+    this.restart();
+  }
+});
+}
   };
 
-  this.out = function () {
-  /*  TweenLite.to(center, 1, { y: 50, onUpdate: update, onComplete: function () { group.visible = false; } });
-    TweenLite.to(group.position, 1, { y: -50 });*/
-  group.visible = false;
+  this.out = function (way) {
+   /* var y = way === 'up' ? ((height / 2) + (width / 2)) - 1 : -70;*/
+   /* TweenLite.to(cache, 1, { y: y, delay: delay, onUpdate: positionUpdate });*/
+  };
+
+  this.start = function () {
+  /*  idleTweens.flare.resume();
+    idleTweens.movingflare.resume();
+    idleTweens.body.resume();*/
+  };
+
+  this.stop = function () {
+   /* idleTweens.flare.pause();
+    idleTweens.movingflare.pause();
+    idleTweens.body.pause();*/
   };
 }
 
-module.exports = LookAtField;
+
+module.exports = Clock;

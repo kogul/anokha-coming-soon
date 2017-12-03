@@ -16,7 +16,7 @@ var TweenLite = require('tweenlite');
 
 
  
-var text = new TextPanel(
+/*var text = new TextPanel(
   'A N O K H A \n I S \n C O M I N G ',
   {
     align: 'center',
@@ -40,7 +40,7 @@ var text2 = new TextPanel(
 text2.el.position.y = -10;
 text2.el.position.z = 10;
 endSection.add(text2.el);
-
+*/
 var field = new LookAtField({
   count: 50
 });
@@ -53,15 +53,15 @@ TweenLite.to(field.el.rotation, 30, { y: 2 * Math.PI, z: 2*Math.PI, ease: window
 });
 
 endSection.onIn(function () {
-  text.in();
+/*  text.in();
   text2.in();
-  field.in();
+*/  field.in();
 });
 
 endSection.onOut(function (way) {
   field.el.visible = false;
-  text.out(way);
-  field.out();
+/*  text.out(way);
+*/  field.out();
 });
 
 module.exports = endSection;

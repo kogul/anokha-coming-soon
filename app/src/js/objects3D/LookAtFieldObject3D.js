@@ -55,29 +55,18 @@ function LookAtField (options) {
   }
 */
   var img = [
-    new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
-    }),
-     new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-    }),
-      new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
-    }),
-       new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-      
-    }),
-        new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-        map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')
-    }),
-         new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-       
-    }),
-
-  ];
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/logo.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/back.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/web.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/date.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/bigger.png')}),
+    new THREE.MeshBasicMaterial({map:THREE.ImageUtils.loadTexture('/anokha-coming-soon/app/public/img/.png')}),
+    ];
+    
     img.map.needsUpdate = true; //ADDED
 
     // plane
-    var plane = new THREE.Mesh(new THREE.BoxGeometry(30,30,30),new THREE.MeshFaceMaterial(img));
+    var plane = new THREE.Mesh(new THREE.BoxGeometry(45,45,45),new THREE.MeshFaceMaterial(img));
 
     plane.overdraw = true;
     var group = new THREE.Object3D(); 

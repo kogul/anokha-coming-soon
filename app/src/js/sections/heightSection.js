@@ -13,7 +13,7 @@ var heightMap = new HeightMap({
   plane: false,
   points: false,
   maps: [
-    { name: 'A', url: './app/public/img/test.jpg' },
+    { name: 'A', url: './app/public/img/mix.png' },
     /*{ name: 'B', url: './app/public/img/heightMap-B.jpg' },*/
     /*{ name: 'O', url: './app/public/img/heightMap-O.jpg' }*/
   ]

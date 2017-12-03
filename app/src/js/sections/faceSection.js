@@ -9,32 +9,59 @@ var Strips = require('../objects3D/StripsObject3D');
 var faceSection = new Section('face');
 
 var eve = new TextPanel(
-  'E V E N T I D E\n\nExtravaganza has an address',
+  'E V E N T I D E',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 55,
     lineSpacing: 40
   }
 );
-eve.el.position.set(25, 0, 0);
+eve.el.position.set(25, 0, 3);
 eve.el.rotation.y = -0.4;
 faceSection.add(eve.el);
 
-var lum = new TextPanel(
-  'L U M I E R E\n\nWhere great minds think aloud',
+var evetag = new TextPanel(
+  'Extravaganza has an address',
   {
     align: 'center',
     style: '',
-    size: 40,
+    size: 25,
     lineSpacing: 40
   }
 );
-lum.el.position.set(-23, 0, 0);
-lum.el.rotation.y = -0.2;
+evetag.el.position.set(25, -5, 3);
+evetag.el.rotation.y = -0.4;
+faceSection.add(evetag.el);
+
+var lum = new TextPanel(
+  'L U M I E R E',
+  {
+    align: 'center',
+    style: '',
+    size: 55,
+    lineSpacing: 40
+  }
+);
+lum.el.position.set(-23, 0, 3);
+lum.el.rotation.y = 0.4;
 faceSection.add(lum.el);
 
+var lumtag = new TextPanel(
+  'Where great minds think aloud',
+  {
+    align: 'center',
+    style: '',
+    size: 25,
+    lineSpacing: 40
+  }
+);
+lumtag.el.position.set(-23, -5, 3);
+lumtag.el.rotation.y = 0.4;
+faceSection.add(lumtag.el);
+
 var face = new Face();
+face.el.position.z = -8;
 face.el.position.y = -5;
 face.el.rotation.x = -0.1;
 face.el.rotation.z = 0.25;
@@ -52,9 +79,11 @@ strips.el.visible = false;
 
 faceSection.onIn(function () {
   face.in();
-  strips.in();
+  //strips.in();
   eve.in();
+  evetag.in();
   lum.in();
+  lumtag.in();
 });
 
 faceSection.onOut(function (way) {

@@ -74,7 +74,7 @@ function LookAtField (options) {
   this.el = group;
 
   this.in = function () {
-    group.visible = true;
+    //group.visible = true;
    /* TweenLite.to(center, 2, { y: 0, onUpdate: update });
     TweenLite.to(group.position, 1, { y: 0 });*/
   };

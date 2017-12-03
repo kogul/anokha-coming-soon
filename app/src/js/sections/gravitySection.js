@@ -108,9 +108,9 @@ gravitySection.onIn(function () {
 
 gravitySection.onOut(function () {
   grid.out();
-  text.out(way);
-  text1.out(way);
-  text2.out(way);
+  text.out();
+  text1.out();
+  text2.out();
 });
 
 gravitySection.onStart(function () {

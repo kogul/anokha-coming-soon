@@ -31,15 +31,20 @@ var field = new LookAtField({
 });
 
 field.el.position.set(0,0,-30);
+
 endSection.add(field.el);
-TweenLite.to(field.el.rotation, 30, { y: 2 * Math.PI, z: 2*Math.PI, ease: window.Linear.easeNone,
+field.el.visible = false;
+TweenLite.to(field.el.rotation, 30, { z: 6, x: 6, y:4, ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }
 });
 
+
 endSection.onIn(function () {
-field.in();
+     
+     field.in();
+     field.el.visible = true;
 });
 
 endSection.onOut(function (way) {

@@ -31,7 +31,7 @@ var comm = new TextPanel(
     lineSpacing: 40,
   }
 );
-comm.el.position.set(-25, 0, 0);
+comm.el.position.set(-19, 0, 0);
 heightSection.add(comm.el);
 
 var commtag = new TextPanel(
@@ -43,7 +43,7 @@ var commtag = new TextPanel(
     lineSpacing: 40,
   }
 );
-commtag.el.position.set(-25,-8, 0);
+commtag.el.position.set(-19,-8, 0);
 heightSection.add(commtag.el);
 
 

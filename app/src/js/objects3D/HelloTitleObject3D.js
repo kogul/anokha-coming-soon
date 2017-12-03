@@ -38,10 +38,10 @@ function Title () {
   texture.flipY = true;
 
   var sprite = new SPRITE3D.Sprite(texture, {
-    horizontal: 8,
+    horizontal: 4,
     vertical: 2,
-    total: 16,
-    duration: 300,
+    total: 8,
+    duration: 200,
     loop: true
   });
 
@@ -52,7 +52,7 @@ function Title () {
     transparent: true
   });
 
-  var geometry = new THREE.PlaneGeometry(25, 15);
+  var geometry = new THREE.PlaneGeometry(50, 30);
   var plane = new THREE.Mesh(geometry, material);
 
   function update () {

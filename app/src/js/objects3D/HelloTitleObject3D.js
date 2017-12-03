@@ -17,14 +17,15 @@ function Title () {
   var path;
 
   var sprites = {
+    none: './app/public/img/anokhawhite-sprite.png',
+    /*anokha : './app/public/img/anokha-sprite.png'
     akqa: './app/public/img/sprite-AKQA.png',
     hki: './app/public/img/sprite-HKI.png',
     grouek: './app/public/img/sprite-grouek.png',
     mediamonks: './app/public/img/sprite-mediamonks.png',
-    none: './app/public/img/sprite-none.png',
     soleilnoir: './app/public/img/sprite-soleilnoir.png',
     thread: './app/public/img/sprite-thread.png',
-    ultranoir: './app/public/img/sprite-ultranoir.png'
+    ultranoir: './app/public/img/sprite-ultranoir.png'*/
   };
 
   if (sprites[HASH.hash]) {
@@ -37,10 +38,10 @@ function Title () {
   texture.flipY = true;
 
   var sprite = new SPRITE3D.Sprite(texture, {
-    horizontal: 4,
-    vertical: 10,
-    total: 40,
-    duration: 70,
+    horizontal: 8,
+    vertical: 2,
+    total: 16,
+    duration: 300,
     loop: true
   });
 
@@ -51,7 +52,7 @@ function Title () {
     transparent: true
   });
 
-  var geometry = new THREE.PlaneGeometry(30, 15);
+  var geometry = new THREE.PlaneGeometry(25, 15);
   var plane = new THREE.Mesh(geometry, material);
 
   function update () {

@@ -27,15 +27,15 @@ text.el.position.set(0, 0, 0);
 galaxySection.add(text.el);
 
 var texttag = new TextPanel(
-  'Tagline',
+  'hanging out at foo bar </>',
   {
     align: 'center',
     style: '',
-    size: 30,
+    size: 45,
     lineSpacing: 40
   }
 );
-texttag.el.position.set(0, -5, 0);
+texttag.el.position.set(0, -7, 0);
 galaxySection.add(texttag.el);
 galaxySection.onIn(function (way) {
   galaxy.in(way);

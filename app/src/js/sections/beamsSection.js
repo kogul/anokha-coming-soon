@@ -2,7 +2,7 @@
 
 var Section = require('../classes/SectionClass');
 var TextPanel = require('../objects3D/TextPanelObject3D');
-var Clock = require('../objects3D/ClockObject3d.js');
+var Clock = require('../objects3D/clockObject3D.js');
 var Beam = require('../objects3D/BeamObject3D');
 
 var beamsSection = new Section('beams');

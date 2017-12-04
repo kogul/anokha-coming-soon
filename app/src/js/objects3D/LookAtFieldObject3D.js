@@ -66,9 +66,9 @@ function LookAtField (options) {
     img.map.needsUpdate = true; //ADDED
 
     // plane
-    var plane = new THREE.Mesh(new THREE.BoxGeometry(45,45,45),new THREE.MeshFaceMaterial(img));
+    var plane = new THREE.Mesh(new THREE.BoxGeometry(20,20,20),new THREE.MeshFaceMaterial(img));
 
-    plane.overdraw = true;
+   // plane.overdraw = true;
     var group = new THREE.Object3D(); 
      group.add(plane);
   this.el = group;

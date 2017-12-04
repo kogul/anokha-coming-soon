@@ -44,33 +44,33 @@ for(i=0; i<10; i++ ){
 
 }
 
-var geometrySphere = new THREE.SphereGeometry( 1 );
-var materialSphere = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+var geometrySphere = new THREE.SphereGeometry( 0.7 );
+var materialSphere = new THREE.MeshBasicMaterial( {color: 0xf80900} );
 var sphere = new THREE.Mesh( geometrySphere, materialSphere );
 group.add( sphere );
 
 
 var Linematerial = new THREE.LineBasicMaterial({
-  color: 0x0000ff,
+  color: 0xf80900,
   linewidth: 10
 });
 var line =[],hour=[];
-for(var i = 0;i<10;i++){
+for(var i = 0;i<=5;i++){
 var geometryLine = new THREE.Geometry();
 geometryLine.vertices.push(
-  new THREE.Vector3( Math.abs(0.5-(i/10)), 0, 0 ),
-  new THREE.Vector3(Math.abs(0.5-(i/10)), 18, 0 )
+  new THREE.Vector3(0.25-(i/10.0), 0, 0 ),
+  new THREE.Vector3(0.25-(i/10.0), 18, 0 )
 );
 
  line[i] = new THREE.Line( geometryLine, Linematerial );
  
   group.add(line[i]);
 }
-for(var i = 0;i<10;i++){
+for(var i = 0;i<=5;i++){
 var geometryLine = new THREE.Geometry();
 geometryLine.vertices.push(
-  new THREE.Vector3( Math.abs(0.5-(i/10)), 0, 0 ),
-  new THREE.Vector3(Math.abs(0.5-(i/10)), 9, 0 )
+  new THREE.Vector3(0.25-(i/10.0), 0, 0 ),
+  new THREE.Vector3(0.25-(i/10.0), 9, 0 )
 );
 
  hour[i] = new THREE.Line( geometryLine, Linematerial );
@@ -89,14 +89,14 @@ geometryLine.vertices.push(
     /*TweenLite.to(cache, 1, { y: -5, delay: delay, onUpdate: positionUpdate });*/
    //  TweenLite.to(group.position, 1, { y: 0 });
    for(var i =0; i<line.length; i++){
-  TweenLite.to(line[i].rotation, 30, { z: -16*Math.PI, ease: window.Linear.easeNone,
+  TweenLite.to(line[i].rotation, 10, { z: -4*Math.PI, transformOrigin:"50% 50%", ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }
 });
 }
 for(var i = 0; i<hour.length; i++){
-  TweenLite.to(hour[i].rotation, 30, { z: -4*Math.PI, ease: window.Linear.easeNone,
+  TweenLite.to(hour[i].rotation, 20, { z: -4*Math.PI,transformOrigin:"50% 50%", ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }

@@ -30,11 +30,11 @@ var field = new LookAtField({
   count: 50
 });
 
-field.el.position.set(0,0,-30);
+//field.el.position.set(0,0,-30);
 
 endSection.add(field.el);
 field.el.visible = false;
-TweenLite.to(field.el.rotation, 30, { z: 6, x: 6, y:4, ease: window.Linear.easeNone,
+TweenLite.to(field.el.rotation, 30, { z:6 , x: 6, y:4, ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }

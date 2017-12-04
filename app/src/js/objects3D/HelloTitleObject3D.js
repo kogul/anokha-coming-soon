@@ -39,9 +39,9 @@ function Title () {
 
   var sprite = new SPRITE3D.Sprite(texture, {
     horizontal: 4,
-    vertical: 2,
-    total: 8,
-    duration: 200,
+    vertical: 3,
+    total: 11,
+    duration: 350,
     loop: true
   });
 
@@ -52,7 +52,7 @@ function Title () {
     transparent: true
   });
 
-  var geometry = new THREE.PlaneGeometry(50, 30);
+  var geometry = new THREE.PlaneGeometry(25, 15);
   var plane = new THREE.Mesh(geometry, material);
 
   function update () {

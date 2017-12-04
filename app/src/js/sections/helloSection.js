@@ -8,7 +8,7 @@ var Smoke = require('../objects3D/SmokeObject3D');
 var helloSection = new Section('hello');
 
 var text = new TextPanel(
-  " Crafted with love by Web Team",
+  " Crafted with love by the Web Team",
   {
     align: 'right',
     style: '',

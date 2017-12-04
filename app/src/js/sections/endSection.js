@@ -30,13 +30,56 @@ var field = new LookAtField({
   count: 50
 });
 
+var text = new TextPanel(
+  'JOIN US',
+  {
+    align: 'center',
+    style: '',
+    size: 75,
+    lineSpacing: 40
+  }
+);
+text.el.position.set(-25, 0, 0);
+endSection.add(text.el);
+
+var texttag = new TextPanel(
+  'ON FEB 22, 23 24',
+  {
+    align: 'center',
+    style: '',
+    size: 75,
+    lineSpacing: 40
+  }
+);
+texttag.el.position.set(33, 0, 0);
+endSection.add(texttag.el);
+
+var webtag = new TextPanel(
+  "AIN'T NO PARTY WITHOUT WEB",
+  {
+    align: 'center',
+    style: '',
+    size: 30,
+    lineSpacing: 40
+  }
+);
+webtag.el.position.set(0, -20, 0);
+endSection.add(webtag.el);
+
+
+function renderText(){
+  text.in();
+  texttag.in();
+  webtag.in();
+}
 //field.el.position.set(0,0,-30);
 
 endSection.add(field.el);
 field.el.visible = false;
 TweenLite.to(field.el.rotation, 30, { z:6 , x: 6, y:4, ease: window.Linear.easeNone,
   onComplete: function () {
-    this.restart();
+    //this.restart();
+    renderText();
   }
 });
 

@@ -66,6 +66,7 @@ var webtag = new TextPanel(
 webtag.el.position.set(0, -20, 0);
 endSection.add(webtag.el);
 
+var tween;
 
 function renderText(){
   text.in();
@@ -76,23 +77,29 @@ function renderText(){
 
 endSection.add(field.el);
 field.el.visible = false;
-TweenLite.to(field.el.rotation, 30, { z:6 , x: 6, y:4, ease: window.Linear.easeNone,
-  onComplete: function () {
-    //this.restart();
-    renderText();
-  }
-});
 
 
 endSection.onIn(function () {
-     
      field.in();
      field.el.visible = true;
+     tween = TweenLite.to(field.el.rotation, 30, { z:6, x: 6, y:4, ease: window.Linear.easeNone,
+      onComplete: function () {
+    //this.restart();
+    renderText();
+       }
+    });
 });
 
 endSection.onOut(function (way) {
+ 
+    text.out();
+  texttag.out();
+  webtag.out();
   field.el.visible = false;
   field.out();
+   field.el.rotation.x = 0;
+  field.el.rotation.y = 0;
+  field.el.rotation.z = 0;
 });
 
 var smokePlaying = false;

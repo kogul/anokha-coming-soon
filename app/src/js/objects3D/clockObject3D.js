@@ -89,14 +89,14 @@ geometryLine.vertices.push(
     /*TweenLite.to(cache, 1, { y: -5, delay: delay, onUpdate: positionUpdate });*/
    //  TweenLite.to(group.position, 1, { y: 0 });
    for(var i =0; i<line.length; i++){
-  TweenLite.to(line[i].rotation, 10, { z: -4*Math.PI, transformOrigin:"50% 50%", ease: window.Linear.easeNone,
+  TweenLite.to(line[i].rotation, 70, { z: -40*Math.PI, transformOrigin:"50% 50%", ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }
 });
 }
 for(var i = 0; i<hour.length; i++){
-  TweenLite.to(hour[i].rotation, 20, { z: -4*Math.PI,transformOrigin:"50% 50%", ease: window.Linear.easeNone,
+  TweenLite.to(hour[i].rotation, 140, { z: -40*Math.PI,transformOrigin:"50% 50%", ease: window.Linear.easeNone,
   onComplete: function () {
     this.restart();
   }
@@ -105,8 +105,8 @@ for(var i = 0; i<hour.length; i++){
   };
 
   this.out = function (way) {
-   /* var y = way === 'up' ? ((height / 2) + (width / 2)) - 1 : -70;*/
-   /* TweenLite.to(cache, 1, { y: y, delay: delay, onUpdate: positionUpdate });*/
+
+  
   };
 
   this.start = function () {

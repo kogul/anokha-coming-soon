@@ -9,6 +9,7 @@ var Grid = require('../objects3D/GridObject3D');
 var ballSection = new Section('ball');
 
 var ball = new Ball();
+
 /*ball.el.rotation.z = 2;
 */ballSection.add(ball.el);
 

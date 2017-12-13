@@ -35,7 +35,7 @@ var text = new TextPanel(
   {
     align: 'center',
     style: '',
-    size: 75,
+    size: 50,
     lineSpacing: 40
   }
 );
@@ -43,11 +43,11 @@ text.el.position.set(-25, 0, 0);
 endSection.add(text.el);
 
 var texttag = new TextPanel(
-  'ON FEB 22, 23 24',
+  'ON FEB 22..23..24',
   {
     align: 'center',
     style: '',
-    size: 75,
+    size: 50,
     lineSpacing: 40
   }
 );

@@ -19,7 +19,7 @@ var text = new TextPanel(
   {
     align: 'center',
     style: '',
-    size: 55,
+    size: 50,
     lineSpacing: 40
   }
 );

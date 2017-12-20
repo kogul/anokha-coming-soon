@@ -38,7 +38,7 @@ regtag.out('down');
 
 
 var tran = new TextPanel(
-  "T R A S P O R T A T I O N",
+  "T R A N S P O R T A T I O N",
   {
     align: 'center',
     style: '',
